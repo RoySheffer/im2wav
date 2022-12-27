@@ -18,7 +18,6 @@ Note: torch installation may depend on your cuda version. see [Install torch](ht
 # Usage
 We provide a toy example using two videos and two single images. The same scripts can be used for the full VGGSound or any other custom dataset.
 We additionally include the ImageHear dataset under `Data/ImageHear/` folder.
-Pre-trained models will be available soon!
 
 We start by setting the directory where all scripts should be run from:<br>
 ```
@@ -126,6 +125,24 @@ python ../models/sample.py \
 -CLIP_dict image_CLIP/CLIP.pickle \
 -models my_model
 ```
+
+## Use pre-trained model
+We start by setting the directory where the pre-trained model weights should be downloaded to:
+```
+mkdir ../pre_trained
+```
+
+### Download the pre-trained model weights
+```
+pip install gdown
+
+gdown 1lCrGsMXqmeKBk-3B3J2jzxNur9olWseb -O ../pre_trained/
+gdown 1v9dmCwrEwkwJhbe2YF3ScM2gjVplSLzt -O ../pre_trained/
+gdown 1UyNBjoxgqBYqA_aYhOu6BHYlkT4CD_M_ -O ../pre_trained/
+```
+
+### Sampling from pre-trained model
+Repeat the Video/Image condition sampling steps replacing my_model with im2wav.
 
 # Cite
 If you find this implementation useful please consider citing our work:
